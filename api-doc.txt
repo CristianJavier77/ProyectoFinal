@@ -1,0 +1,29 @@
+
+
+
+REGISTER AN USER AND GET ACCESS-TOKEN:
+     [POST] <domain>/sign
+     BODY: { username: string, password: string, firstname: string, lastname: string }
+     RESPONSE: { 
+          error: { message:string, errorCode: number},
+          data: { token: string }
+     }
+
+LOGIN AND GET TOKEN:
+
+     LOGIN WITH CREDENTIALS
+     [POST] <domain>/log/credrentials
+     BODY: { username: string, password: string }
+     RESPONSE:  { 
+          error: { message:string, errorCode: number} | null,
+          data: { isAuth: boolean, token: string} | null
+     }
+
+     LOGIN WITH EXISTING TOKEN
+     [POST] <domain>/log/token
+     BODY: { token: string }
+     RESPONSE:  { 
+          error: { message:string, errorCode: number} | null,
+          data: { isAuth: boolean } | null
+     }
+
